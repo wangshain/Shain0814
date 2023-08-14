@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+#exp .work .item, #exp .edu .item {
+  display: flex;
+  width: 100%;
+}
+#exp .work .item .itemName, #exp .edu .item .itemName {
+  width: 30%;
+  padding-right: 20px;
+}
+#exp .work .item .itemContent, #exp .edu .item .itemContent {
+  width: 70%;
+  border-left: 2px solid black;
+}
+
+#skills img {
+  width: 64px;
+}
+
+footer {
+  height: 20vh;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer ul {
+  list-style: none;
+}
