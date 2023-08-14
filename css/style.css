@@ -1,3 +1,10 @@
+:root {
+  --color_bg: #fff3da;
+  --color_secBg: #f7f5eb;
+  --color_txt: #a0c3d2;
+  --colorOther: #eae0da;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +12,114 @@
   box-sizing: border-box;
 }
 
-#exp .work .item, #exp .edu .item {
-  display: flex;
-  width: 100%;
-}
-#exp .work .item .itemName, #exp .edu .item .itemName {
-  width: 30%;
-  padding-right: 20px;
-}
-#exp .work .item .itemContent, #exp .edu .item .itemContent {
-  width: 70%;
-  border-left: 2px solid black;
+html, body {
+  position: relative;
 }
 
+header nav {
+  background-color: var(--colorOther);
+}
+
+section {
+  width: 100%;
+  padding: 40px;
+}
+section h1 {
+  margin-bottom: 1.5rem;
+  font-weight: bolder;
+}
+section h2 {
+  margin-bottom: 1.2rem;
+  padding-left: 1.2rem;
+  border-left: 1.2rem solid var(--color_txt);
+}
+section:nth-child(odd) {
+  background-color: var(--color_bg);
+}
+section:nth-child(even) {
+  background-color: var(--color_secBg);
+}
+
+#about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#about img {
+  position: relative;
+  width: 25rem;
+  left: -200px;
+  border-radius: 0.2rem;
+}
+#about .contentCover {
+  background-color: var(--colorOther);
+  display: block;
+  width: 50%;
+  height: 30vh;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+}
+#about .content {
+  position: absolute;
+  background: var(--color_secBg);
+  width: 100%;
+  padding: 20px;
+  border-radius: 0.2rem;
+  right: 20px;
+  top: 20px;
+  z-index: 99;
+}
+#about .content span {
+  font-size: 2rem;
+}
+
+#experience .work .item, #experience .edu .item {
+  display: flex;
+  width: 100%;
+  padding: 2rem auto;
+}
+#experience .work .item .itemName, #experience .edu .item .itemName {
+  font-size: 1.2rem;
+  width: 30%;
+  padding-right: 20px;
+  padding: 10rem auto;
+  text-align: end;
+}
+#experience .work .item .itemContent, #experience .edu .item .itemContent {
+  width: 70%;
+  border-left: 4px solid black;
+  padding: 10rem auto;
+}
+
+#profolio {
+  text-align: center;
+}
+#profolio .cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+#profolio .cards .card {
+  width: 15rem;
+  overflow: hidden;
+}
+#profolio .cards .card .card-img-top {
+  background-size: cover;
+  background-position: center;
+}
+
+#skills {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 #skills img {
   width: 64px;
 }
@@ -26,9 +128,19 @@ footer {
   height: 20vh;
   background: #eee;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 footer ul {
   list-style: none;
+}
+
+#top {
+  position: fixed;
+  font-size: 2rem;
+  color: black;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
 }

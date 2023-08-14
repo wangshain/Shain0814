@@ -1,40 +1,144 @@
+:root{
+    --color_bg: #fff3da;
+    --color_secBg: #f7f5eb;
+    --color_txt: #a0c3d2;
+    --colorOther: #eae0da;
+}
+@mixin dFlex($fd,$jc,$ai){
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
 *{
-    margin:
-     0;
+    margin:0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
     // border: 1px solid red;
 }
 
-#exp{
+html,body{
+    position: relative;
+}
+
+header{
+    nav{
+        background-color: var(--colorOther);
+    }
+}
+
+section{
+    width: 100%;
+    padding: 40px;
+    h1{
+        margin-bottom: 1.5rem;
+        font-weight: bolder;
+    }
+    h2{
+        margin-bottom: 1.2rem;
+        padding-left: 1.2rem    ;
+        border-left: 1.2rem solid var(--color_txt);
+    }
+    &:nth-child(odd){
+        background-color: var(--color_bg);
+    }
+    &:nth-child(even){
+        background-color: var(--color_secBg);
+    }
+}
+#about{
+    position: relative;
+    @include dFlex(column,center,center);
+    img{
+        position: relative;
+        width: 25rem;
+        left: -200px;
+        border-radius: .2rem;
+    }
+    .contentCover{
+        background-color: var(--colorOther);
+        display: block;
+        width: 50%;
+        height: 30vh;
+        position: absolute;
+        left: 40%;
+        top: 40%;
+    }
+    .content{
+        position: absolute;
+        background: var(--color_secBg);
+        width: 100%;
+        padding: 20px;
+        border-radius: .2rem;
+        right: 20px;
+        top: 20px;
+        z-index: 99;
+        span{
+            font-size: 2rem;
+        }
+    }
+}
+#experience{
     .work, .edu{
         .item{
             display: flex;
             width: 100%;
+            padding: 2rem auto;
             .itemName{
+                font-size: 1.2rem;
                 width: 30%;
                 padding-right: 20px;
+                padding: 10rem auto;
+                text-align: end;
             }
             .itemContent{
                 width: 70%;
-                border-left: 2px solid black;
+                border-left: 4px solid black;
+                padding: 10rem auto;
             }
         }
     }
 }
-#skills {
+#profolio{
+    text-align: center;
+    .cards{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 2rem;
+        .card{
+            width: 15rem;
+            overflow: hidden;
+            .card-img-top{
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}
+#skills{
+    text-align: center;
+    width: 100%;
+    @include dFlex(row,center,center);
     img{
         width: 64px;
     }
 }
+
 footer{
     height: 20vh;
     background: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include dFlex(row,center,center);
     ul{
         list-style: none;
     }
+}
+#top{
+    position: fixed;
+    font-size: 2rem;
+    color: black;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
 }
